@@ -84,7 +84,7 @@ const UserTable: React.FC<UserTableProps> = ({ users, onDelete, onEdit }) => {
           <IconButton color="primary" onClick={() => handleViewDetails(params.row)}>
             <VisibilityIcon />
           </IconButton>
-          <IconButton color="gray" onClick={() => onEdit(params.row)}>
+          <IconButton color="default" onClick={() => onEdit(params.row)}>
             <EditIcon /> {/* Add Edit Icon */}
           </IconButton>
           <IconButton color="secondary" onClick={() => handleDeleteUser(params.row)}>
@@ -99,12 +99,16 @@ const UserTable: React.FC<UserTableProps> = ({ users, onDelete, onEdit }) => {
   return (
     <>
       {/* DataGrid Table */}
-      <Box sx={{ height: 500, width: "100%" }}>
+      <Box sx={{ height: "auto", width: "100%" }}>
         <DataGrid
           rows={users}
           columns={columns}
           pageSize={5}
-          rowsPerPageOptions={[5, 10, 20]}
+          initialState={{
+            ...users,
+            pagination: { paginationModel: { pageSize: 5 } },
+          }}
+          pageSizeOptions={[5, 10, 25, { value: -1, label: 'All' }]}
           checkboxSelection
           disableSelectionOnClick
           disableRowSelectionOnClick

@@ -81,14 +81,14 @@ const AnalyticsDashboard: React.FC = () => {
 
       {/* Filters */}
       <Grid2 container spacing={2} style={{ marginBottom: "20px" }}>
-        <Grid2 size={{ xs: 12, md: 2 }}>
+        <Grid2 size={{ xs: 6, md: 2 }}>
           <DateFieldPicker
             field={{ value: startDate }}
             form={{ setFieldValue: (_name: string, value: dayjs.Dayjs | null) => setStartDate(value) }}
             label="Start Date"
           />
         </Grid2>
-        <Grid2 size={{ xs: 12, md: 2 }}>
+        <Grid2 size={{ xs: 6, md: 2 }}>
           <DateFieldPicker
             field={{ value: endDate }}
             form={{ setFieldValue: (_name: string, value: dayjs.Dayjs | null) => setEndDate(value) }}
