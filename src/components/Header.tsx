@@ -15,8 +15,8 @@ const Header: React.FC = () => {
   const user: User = JSON.parse(localStorage.getItem("currentUser") || "{}");
 
   const handleLogout = () => {
-    localStorage.clear(); // Example for logout
     navigate("/login"); // Redirect to login page
+    localStorage.clear(); // Example for logout
     setOpenLogoutModal(false); // Close the modal after logout
   };
 
