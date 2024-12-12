@@ -103,16 +103,16 @@ const UserTable: React.FC<UserTableProps> = ({ users, onDelete, onEdit }) => {
         <DataGrid
           rows={users}
           columns={columns}
-          pageSize={5}
           initialState={{
-            ...users,
-            pagination: { paginationModel: { pageSize: 5 } },
+            pagination: {
+              paginationModel: { pageSize: 5 },
+            },
           }}
-          pageSizeOptions={[5, 10, 25, { value: -1, label: 'All' }]}
+          pageSizeOptions={[5, 10, 25, { value: -1, label: "All" }]}
           checkboxSelection
-          disableSelectionOnClick
           disableRowSelectionOnClick
         />
+
       </Box>
 
       {/* User Details Dialog */}

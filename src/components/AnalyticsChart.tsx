@@ -160,7 +160,7 @@ const AnalyticsChart = () => {
               outerRadius={100}
               label
             >
-              {activeInactiveData.map((entry, index) => (
+              {activeInactiveData.map((_, index) => (
                 <Cell key={`cell-${index}`} fill={COLORS[index]} />
               ))}
             </Pie>
