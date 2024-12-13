@@ -59,6 +59,10 @@ const DashboardPage: React.FC = () => {
                             Login
                         </Typography>
 
+                        <Box >
+                            <Typography fontSize={12}>Email: new@gmail.com</Typography>
+                            <Typography fontSize={12}>Pawwrod: 123456</Typography>
+                        </Box>
                         {/* Render error message if login fails */}
                         {error && (
                             <Alert severity="error" sx={{ marginBottom: 2 }}>
